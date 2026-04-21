@@ -43,7 +43,7 @@ export default function DeliveryStrip() {
               style={{
                 fontSize: 'clamp(22px,4vw,36px)',
                 fontWeight: '800',
-                color: '#fff',
+                color: 'var(--white)',
                 lineHeight: 1.2,
               }}
             >
@@ -68,7 +68,7 @@ export default function DeliveryStrip() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '12px',
-                  background: 'rgba(255,255,255,0.08)',
+                  background: 'var(--white-08)',
                   border: '1px solid rgba(255,255,255,0.15)',
                   borderRadius: '10px',
                   padding: '14px 20px',

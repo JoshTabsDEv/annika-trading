@@ -26,7 +26,7 @@ export default function ProductCard({
         style={{
           width: '100%',
           height: '180px',
-          background: 'rgba(255,255,255,0.06)',
+          background: 'var(--white-indicator)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -40,7 +40,7 @@ export default function ProductCard({
           style={{
             fontSize: '15px',
             fontWeight: '700',
-            color: '#fff',
+            color: 'var(--white)',
             lineHeight: 1.3,
           }}
         >
