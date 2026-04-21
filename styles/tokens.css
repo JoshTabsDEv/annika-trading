@@ -1,0 +1,157 @@
+/* styles/tokens.css */
+/* ─── Color Tokens ─── */
+:root {
+  --orange: oklch(0.64 0.19 52);
+  --orange-dark: oklch(0.54 0.20 52);
+  --orange-light: oklch(0.94 0.06 52);
+  --charcoal: oklch(0.18 0.01 250);
+  --mid: oklch(0.45 0.01 250);
+  --subtle: oklch(0.75 0.01 250);
+  --rule: oklch(0.91 0.005 250);
+  --bg: oklch(0.99 0.004 70);
+  --card: #ffffff;
+
+  /* ─── Typography ─── */
+  --font: "DM Sans", sans-serif;
+
+  /* ─── Layout ─── */
+  --max: 1120px;
+  --r: 10px;
+
+  /* ─── Shadows ─── */
+  --shadow-nav: 0 2px 12px rgba(0, 0, 0, 0.18);
+  --shadow-sticky: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+  /* ─── Spacing Scale (base: 4px) ─── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-base: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 28px;
+  --space-2xl: 32px;
+  --space-3xl: 36px;
+  --space-4xl: 40px;
+  --space-5xl: 48px;
+  --space-6xl: 52px;
+  --space-7xl: 60px;
+  --space-8xl: 72px;
+  --space-hero: 100px;
+}
+
+/* ─── Base Resets ─── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--charcoal);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ─── Utility Classes ─── */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Button Base Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+  min-height: 52px;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--orange);
+  border: 2px solid var(--orange);
+}
+
+.btn-outline:hover {
+  background: var(--orange-light);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--orange);
+}
+
+.btn-white:hover {
+  background: #f5f5f5;
+}
+
+.btn-ghost-white {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-ghost-white:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Section Labels and Titles */
+.section-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.section-sub {
+  color: var(--mid);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+@media (max-width: 680px) {
+  .btn {
+    padding: 14px 22px;
+    font-size: 15px;
+  }
+}
