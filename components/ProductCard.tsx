@@ -1,0 +1,61 @@
+// components/ProductCard.tsx
+type ProductCardProps = {
+  title: string;
+  description: string;
+  emoji: string;
+};
+
+export default function ProductCard({
+  title,
+  description,
+  emoji,
+}: ProductCardProps) {
+  return (
+    <div
+      style={{
+        borderRadius: 'var(--r)',
+        overflow: 'hidden',
+        border: '1px solid rgba(255,255,255,0.1)',
+        transition: 'border-color 0.15s, transform 0.15s',
+        cursor: 'default',
+        position: 'relative',
+      }}
+      className="hover:border-orange hover:translate-y-[-3px]"
+    >
+      <div
+        style={{
+          width: '100%',
+          height: '180px',
+          background: 'rgba(255,255,255,0.06)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '36px',
+        }}
+      >
+        {emoji}
+      </div>
+      <div style={{ padding: '16px 18px 18px' }}>
+        <h3
+          style={{
+            fontSize: '15px',
+            fontWeight: '700',
+            color: '#fff',
+            lineHeight: 1.3,
+          }}
+        >
+          {title}
+        </h3>
+        <p
+          style={{
+            fontSize: '13px',
+            color: 'rgba(255,255,255,0.5)',
+            marginTop: '5px',
+          }}
+        >
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
