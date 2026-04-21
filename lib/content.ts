@@ -1,9 +1,75 @@
 // lib/content.ts
+
+// ─── Constants for reusable values ───
+const CONTACT = {
+  phone: {
+    display: '0909 993 1787',
+    tel: '+639099931787',
+  },
+  address: 'In front of Ever, MH Del Pilar, Poblacion Road, Valenzuela',
+  addressFull: 'In front of Ever, MH Del Pilar, Poblacion Road, Valenzuela, Metro Manila',
+  mapsUrl: 'https://maps.google.com/?q=Annika+Trading+MH+Del+Pilar+Poblacion+Valenzuela',
+  mapsEmbedUrl: 'https://maps.google.com/maps?q=MH+Del+Pilar+Poblacion+Valenzuela+City&output=embed&z=16',
+};
+
+// ─── TypeScript Interfaces ───
+interface Button {
+  label: string;
+  href: string;
+  icon: string;
+  variant: string;
+  ariaLabel?: string;
+}
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Card {
+  icon: string;
+  title: string;
+  content: string;
+  isLink?: boolean;
+  href?: string;
+}
+
+interface Product {
+  title: string;
+  description: string;
+  emoji: string;
+}
+
+interface Badge {
+  value: string;
+  label: string;
+}
+
+interface Review {
+  name: string;
+  date: string;
+  rating: number;
+  stars: string;
+  text: string;
+}
+
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+interface ContactInfo {
+  address: string;
+  phone: string;
+  hours: string;
+}
+
+// ─── Main Content Export ───
 export const siteContent = {
   nav: {
     brand: 'Annika',
     brandHighlight: 'Trading',
-    phone: '0909 993 1787',
+    phone: CONTACT.phone.display,
     callNowLabel: 'Call Now',
   },
 
@@ -18,22 +84,24 @@ export const siteContent = {
     buttons: [
       {
         label: 'Call Now',
-        href: 'tel:+639099931787',
+        href: `tel:${CONTACT.phone.tel}`,
         icon: '☎️',
         variant: 'primary',
+        ariaLabel: 'Call Annika Trading at 0909 993 1787',
       },
       {
         label: 'Get Directions',
-        href: 'https://maps.google.com/?q=Annika+Trading+MH+Del+Pilar+Poblacion+Valenzuela',
+        href: CONTACT.mapsUrl,
         icon: '📍',
         variant: 'ghost-white',
+        ariaLabel: 'Get directions to Annika Trading store',
       },
-    ],
+    ] as Button[],
     stats: [
       { value: '5.0 ★', label: 'Google Rating' },
       { value: 'Open', label: 'Until 4:30 PM daily' },
       { value: 'Local', label: 'Valenzuela-based' },
-    ],
+    ] as Stat[],
   },
 
   storeInfo: {
@@ -44,27 +112,24 @@ export const siteContent = {
       {
         icon: '📍',
         title: 'Address',
-        content:
-          'In front of Ever, MH Del Pilar, Poblacion Road, Valenzuela',
+        content: CONTACT.address,
       },
       {
         icon: '☎️',
         title: 'Phone',
-        content: '0909 993 1787',
+        content: CONTACT.phone.display,
         isLink: true,
-        href: 'tel:+639099931787',
+        href: `tel:${CONTACT.phone.tel}`,
       },
       {
         icon: '🕐',
         title: 'Business Hours',
         content: 'Open daily · Closes at 4:30 PM',
       },
-    ],
-    mapEmbedUrl:
-      'https://maps.google.com/maps?q=MH+Del+Pilar+Poblacion+Valenzuela+City&output=embed&z=16',
+    ] as Card[],
+    mapEmbedUrl: CONTACT.mapsEmbedUrl,
     mapButtonText: 'Open in Google Maps',
-    mapButtonHref:
-      'https://maps.google.com/?q=Annika+Trading+MH+Del+Pilar+Poblacion+Valenzuela',
+    mapButtonHref: CONTACT.mapsUrl,
   },
 
   products: {
@@ -98,7 +163,7 @@ export const siteContent = {
         description: 'Hand tools, power tools, safety equipment',
         emoji: '🛠️',
       },
-    ],
+    ] as Product[],
   },
 
   deliveryStrip: {
@@ -108,7 +173,7 @@ export const siteContent = {
     badges: [
       { value: '2+', label: 'Delivery Trucks' },
       { value: 'Fast', label: 'Local Delivery' },
-    ],
+    ] as Badge[],
   },
 
   reviews: {
@@ -141,7 +206,7 @@ export const siteContent = {
         stars: '★★★★★',
         text: '"Laging may stocks at mababang presyo kumpara sa iba. Madaling hanapin — nasa harap ng Ever. Maganda rin yung serbisyo, hindi kayo pababayaan. Limang bituin talaga!"',
       },
-    ],
+    ] as Review[],
   },
 
   cta: {
@@ -149,18 +214,20 @@ export const siteContent = {
     subtitle: 'Reach us for orders, inquiries, and bulk pricing',
     buttons: [
       {
-        label: 'Call: 0909 993 1787',
-        href: 'tel:+639099931787',
+        label: `Call: ${CONTACT.phone.display}`,
+        href: `tel:${CONTACT.phone.tel}`,
         icon: '☎️',
         variant: 'white',
+        ariaLabel: 'Call Annika Trading to place an order',
       },
       {
         label: 'Send a Text',
-        href: 'sms:+639099931787',
+        href: `sms:${CONTACT.phone.tel}`,
         icon: '💬',
         variant: 'ghost-white',
+        ariaLabel: 'Send a text message to Annika Trading',
       },
-    ],
+    ] as Button[],
   },
 
   footer: {
@@ -174,18 +241,17 @@ export const siteContent = {
       { label: 'Products', href: '#products' },
       { label: 'Reviews', href: '#reviews' },
       { label: 'Contact', href: '#contact' },
-    ],
+    ] as NavLink[],
     contactInfo: {
-      address:
-        'In front of Ever, MH Del Pilar, Poblacion Road, Valenzuela, Metro Manila',
-      phone: '0909 993 1787',
+      address: CONTACT.addressFull,
+      phone: CONTACT.phone.display,
       hours: 'Open until 4:30 PM',
-    },
+    } as ContactInfo,
     copyright: '© 2025 Annika Trading. All rights reserved. · Valenzuela, Philippines',
   },
 
   stickyCall: {
-    phone: '0909 993 1787',
+    phone: CONTACT.phone.tel,
     ariaLabel: 'Call Annika Trading',
   },
 };
