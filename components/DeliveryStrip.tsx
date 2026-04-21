@@ -51,7 +51,7 @@ export default function DeliveryStrip() {
             </h2>
             <p
               style={{
-                color: 'rgba(255,255,255,0.65)',
+                color: 'var(--white-65)',
                 marginTop: '8px',
                 fontSize: '16px',
               }}
@@ -69,7 +69,7 @@ export default function DeliveryStrip() {
                   alignItems: 'center',
                   gap: '12px',
                   background: 'var(--white-08)',
-                  border: '1px solid rgba(255,255,255,0.15)',
+                  border: '1px solid var(--white-15)',
                   borderRadius: '10px',
                   padding: '14px 20px',
                   flexShrink: 0,
@@ -90,7 +90,7 @@ export default function DeliveryStrip() {
                   <span
                     style={{
                       fontSize: '13px',
-                      color: 'rgba(255,255,255,0.6)',
+                      color: 'var(--white-6)',
                     }}
                   >
                     {badge.label}

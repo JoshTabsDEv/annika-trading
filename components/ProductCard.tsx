@@ -15,7 +15,7 @@ export default function ProductCard({
       style={{
         borderRadius: 'var(--r)',
         overflow: 'hidden',
-        border: '1px solid rgba(255,255,255,0.1)',
+        border: '1px solid var(--white-01)',
         transition: 'border-color 0.15s, transform 0.15s',
         cursor: 'default',
         position: 'relative',
@@ -49,7 +49,7 @@ export default function ProductCard({
         <p
           style={{
             fontSize: '13px',
-            color: 'rgba(255,255,255,0.5)',
+            color: 'var(--white-5)',
             marginTop: '5px',
           }}
         >
